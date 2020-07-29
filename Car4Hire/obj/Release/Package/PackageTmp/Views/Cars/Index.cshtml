@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Car4Hire.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered" id="myTable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.make)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.model)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.type)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.fuel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    <td>
+        <img src="~/Images/@Html.DisplayFor(m => item.image)" width="150" height="150" />
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.carId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.carId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.carId })
+    </td>
+</tr>
+}
+
+
+</table>
+
+
+<script>
+
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>

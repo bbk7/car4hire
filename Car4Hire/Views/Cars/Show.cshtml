@@ -1,0 +1,161 @@
+﻿@model IEnumerable<Car4Hire.Models.Car>
+
+
+@{
+    ViewBag.Title = "Show";
+}
+
+
+<h2>Car 4 Hire</h2>
+
+<section id="s2">
+    @using (Html.BeginForm())
+    {
+
+        <div class="two">
+            <p>
+                Name: @Html.TextBox("searchString")
+                <input type="submit" value="search" />
+            </p>
+
+        </div>
+
+        <div class="one">
+            <p>
+                Manufacturer: @Html.DropDownList("manufacturer", "All")
+
+                <input type="submit" value="Filter" />
+            </p>
+
+            <p>
+                Type:@Html.DropDownList("type", "All")
+
+                <input type="submit" value="Filter" />
+            </p>
+
+            <p>
+                Fuel:@Html.DropDownList("fuel", "All")
+
+                <input type="submit" value="Filter" />
+            </p>
+
+        </div>
+
+
+
+    }
+</section>
+<br />
+
+
+<div class="row product-container" >
+    @foreach (var item in Model)
+    {
+
+        <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+            <div class="thumbnail product-item" style="height:300px" >
+
+                <img class="img-responsive" title="Click to View Product detail" style="cursor:pointer; height:160px; width:100%"
+                     src="~/Images/@Html.DisplayFor(modelItem => item.image)" />
+
+
+                <div class="caption">
+                    <p style="text-align:center;">@item.make @item.model</p>
+                    <p style="text-align:center;">£@item.price per day</p>
+                    <p style="text-align:center;">@Html.ActionLink("View", "View", new { id = item.carId }) </p>
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    }
+</div>
+
+<style>
+
+
+    h2 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 5em;
+        text-align: center;
+        margin: 2px;
+    }
+
+    #s2 {
+        height: 200px;
+        background-image: linear-gradient(to bottom right, white, whitesmoke);
+    }
+
+
+    .one {
+        float: left;
+        width: 70%;
+        padding-top: 50px;
+        box-sizing: border-box;
+    }
+
+    .two {
+        float: right;
+        width: 30%;
+        padding-top: 80px;
+        box-sizing: border-box;
+    }
+
+
+  
+
+
+</style>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable();
+    });
+</script>
+
+
+<style>
+
+    .product-item {
+        position: relative;
+    }
+
+        .product-item .caption h5 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            border-top: 2px solid #333;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        .product-item .caption .product-item-price {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+        }
+
+
+        .product-item .product-item-badge {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            padding: 5px 12px 6px;
+            color: #fff;
+            font-size: 12px;
+            line-height: 14px;
+            font-weight: 600;
+            background: #333;
+            -webkit-border-radius: 4px 0 4px 0;
+            -moz-border-radius: 4px 0 4px 0;
+            /*-o-border-radius: 4px 0 4px 0;*/
+            border-radius: 4px 0 4px 0;
+        }
+</style>

@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+    <h5>Car 4 Hire</h5>
+
+<h2>Confirmation</h2>
+<hr />
+
+<div id="con">
+    <p>THANK YOU FOR RENTING THE CAR FROM CAR 4 HIRE.</p>
+    <p>THE DETAIL WILL BE SENT TO YOUR EMAIL ADDRESS.</p>
+    @*<p>HAVE A GOOD DAY.</p>*@
+
+</div>
+
+
+<div id="con1">
+    @Html.ActionLink("OKAY", "Index", "Home")
+</div>
+
+<style>
+
+    h2 {
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+    h5 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 5em;
+        text-align: center;
+        margin: 2px;
+        padding-top: 40px;
+    }
+
+    #con {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 2em;
+        text-align: center;
+        margin: 2px;
+        background-image: linear-gradient(to bottom right, white, whitesmoke);
+    }
+    #con1 {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 2em;
+        text-align: center;
+        margin: 2px;
+       /* background-image: linear-gradient(to bottom right, white, whitesmoke);*/
+    }
+
+</style>

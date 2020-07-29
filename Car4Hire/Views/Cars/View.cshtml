@@ -1,0 +1,170 @@
+﻿@model Car4Hire.Models.Car
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h1>Car 4 Hire</h1>
+<section id="s3">
+<div id="left">
+
+    <dl class="dl-horizontal">
+        <dt class="dt">
+            Manufacturer
+            @*@Html.DisplayNameFor(model => model.make)*@
+        </dt>
+
+        <dd class="dd">
+
+            @Html.DisplayFor(model => model.make)
+        </dd>
+
+        <dt class="dt">
+            Name
+
+            @*@Html.DisplayNameFor(model => model.model)*@
+        </dt>
+
+        <dd class="dd">
+            @Html.DisplayFor(model => model.model)
+        </dd>
+
+        <dt class="dt">
+            Type
+            @*@Html.DisplayNameFor(model => model.type)*@
+        </dt>
+
+        <dd class="dd">
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt class="dt">
+            Fuel
+            @*@Html.DisplayNameFor(model => model.fuel)*@
+        </dt>
+
+        <dd class="dd">
+            @Html.DisplayFor(model => model.fuel)
+        </dd>
+
+        <dt class="dt">
+            Price
+            @*@Html.DisplayNameFor(model => model.price)*@
+        </dt>
+
+        <dd class="dd">
+            @Html.DisplayFor(model => model.price) per day.
+        </dd>
+
+        @*<dt class="dt">
+                @Html.DisplayNameFor(model => model.image)
+            </dt>*@
+
+        @*<dd class="dd">
+                <img src="~/Images/@Html.DisplayFor(m => m.image)" width="150" height="150"/>
+            </dd>*@
+
+    </dl>
+</div>
+
+<div id="right">
+
+    <img src="~/Images/@Html.DisplayFor(m => m.image)" width="400" height="250" />
+
+</div>
+
+</section>
+<br />
+
+<section id="s4">
+
+    <div class="a">
+
+        @Html.ActionLink("Rent", "CreateShow", "Customers")
+    </div>
+
+    <div class="b">   
+        @Html.ActionLink("Back", "Show", "Cars")
+    </div>
+
+</section>
+
+
+
+
+<style>
+    h1 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 5em;
+        text-align: center;
+        margin: 2px;
+        padding-top: 40px;
+    }
+
+    .dt {
+        padding: 5px;
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+
+    .dd {
+        padding: 5px;
+        font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    #right {
+        float: right;
+        width: 40%;
+        padding-top: 50px;        
+        box-sizing: border-box;
+    }
+
+    #left {
+        float: left;
+        width: 60%;
+        padding-top: 50px;    
+        box-sizing: border-box;
+        font-size: 1.5em;
+    }
+
+    #s3 {
+        height: 400px;
+    /*    border: dotted;*/
+        padding-bottom: 10px;
+    }
+
+    #s4 {
+        text-align: center;
+        font-size: 2.5em;
+        font-family: 'Amatic SC', cursive;
+       /* border: dotted;*/
+        margin: 2px;
+        padding-left:300px;
+        padding-right:300px;
+        padding-top:10px;
+        padding-bottom:10px;
+        height: 80px;
+        
+    }
+
+    .a {
+        float: left;
+        box-sizing: border-box;
+     /*   border: double;*/
+        padding: 2px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-image: linear-gradient(to bottom right, whitesmoke, dimgrey);
+    }
+
+    .b {
+        float: right;
+        box-sizing: border-box;
+     /*   border: double;*/
+        padding: 2px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-image: linear-gradient(to bottom right, white, dimgrey);
+    }
+
+</style>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Car4Hire.Models.Car>
+
+@{
+    ViewBag.Title = "Database";
+}
+
+    <h1>Car 4 Hire</h1>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.make)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fuel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                <img src="~/Images/@Html.DisplayFor(m => item.image)" width="150" height="150" />
+            </td>
+
+        </tr>
+    }
+
+
+</table>
+
+
+<style>
+    h1 {
+        font-family: 'Amatic SC', cursive;
+        font-size: 5em;
+        text-align: center;
+        margin: 2px;
+        padding-top: 40px;
+    }
+</style>
